@@ -1,0 +1,40 @@
+﻿@model Calculartor.Models.Expression
+@{
+    ViewBag.Title = "Các phép tính đơn giản";
+}
+
+<h1>@ViewBag.Title</h1>
+@using (Html.BeginForm())
+{
+    <table class="table-bordered">
+        <tr>
+            <th>@Html.Label("Số thứ 1")</th>
+            <td>
+                @Html.EditorFor(model => model.Num1)
+                <span class="text-danger">@Html.ValidationMessageFor(model=>model.Num1)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.Label("Số thứ 2")</th>
+            <td>
+                @Html.EditorFor(model => model.Num2)
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Num2)</span>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-primary" type="submit" value="+" name="command" />
+                <input class="btn btn-primary" type="submit" value="-" name="command" />
+                <input class="btn btn-primary" type="submit" value="x" name="command" />
+                <input class="btn btn-primary" type="submit" value="/" name="command" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <h3 style="color:red">@Html.Label("Kết quả:")</h3>
+            </th>
+            <td><h3 style="color:red">@Html.DisplayFor(model => model.Result)</h3></td>
+        </tr>
+    </table>
+}
