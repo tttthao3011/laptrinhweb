@@ -1,0 +1,26 @@
+﻿@model QLSach.Models.Publishing
+
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Nhà sản xuất</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishingName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Thay đổi", "Edit", new { id = Model.PublishingId }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

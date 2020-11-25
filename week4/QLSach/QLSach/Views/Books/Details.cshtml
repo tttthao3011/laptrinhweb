@@ -1,0 +1,58 @@
+﻿@model QLSach.Models.Book
+
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Sách</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author.AuthorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.AuthorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publishing.PublishingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publishing.PublishingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PubYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PubYear)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Thay đổi", "Edit", new { id = Model.BookId }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
